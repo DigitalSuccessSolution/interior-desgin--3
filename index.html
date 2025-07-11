@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Architecture & Interior Design Studio</title>
+    <title>Professional 3D Architecture & Interior Design</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config={theme:{extend:{colors:{primary:'#1e3a8a',secondary:'#c8a951'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#0F4C81',secondary:'#D4AF37'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -17,276 +17,287 @@
             font-family: 'Montserrat', sans-serif;
         }
         .hero-section {
-            background-image: url('https://public.readdy.ai/ai/img_res/10545c077c41dfc51f78678c00e02a05.jpg');
+            background-image: url('https://public.readdy.ai/ai/img_res/80b4527eb100046492f263cdae6b9bbb.jpg');
             background-size: cover;
             background-position: center;
         }
         .hero-overlay {
-            background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.1) 100%);
+            background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0) 100%);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #0F4C81;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .service-card {
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: #1e3a8a;
-        }
-        .custom-checkbox {
-            position: relative;
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border: 2px solid #e2e8f0;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .custom-checkbox.checked {
-            background-color: #1e3a8a;
-            border-color: #1e3a8a;
-        }
-        .custom-checkbox.checked::after {
-            content: '';
-            position: absolute;
-            top: 2px;
-            left: 6px;
-            width: 6px;
-            height: 10px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-        }
-        .custom-switch {
-            position: relative;
-            display: inline-block;
-            width: 50px;
-            height: 24px;
-        }
-        .custom-switch-track {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #e2e8f0;
-            border-radius: 34px;
-            transition: 0.4s;
-        }
-        .custom-switch-thumb {
-            position: absolute;
-            height: 20px;
-            width: 20px;
-            left: 2px;
-            bottom: 2px;
-            background-color: white;
-            border-radius: 50%;
-            transition: 0.4s;
-        }
-        .custom-switch.active .custom-switch-track {
-            background-color: #1e3a8a;
-        }
-        .custom-switch.active .custom-switch-thumb {
-            transform: translateX(26px);
-        }
-        .testimonial-card {
-            transition: transform 0.3s ease;
-        }
-        .testimonial-card:hover {
-            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(15, 76, 129, 0.1);
         }
         .portfolio-item {
             overflow: hidden;
         }
         .portfolio-item img {
-            transition: transform 0.5s ease;
+            transition: transform 0.5s;
         }
         .portfolio-item:hover img {
             transform: scale(1.05);
         }
         .portfolio-overlay {
+            background: linear-gradient(to top, rgba(15, 76, 129, 0.8), transparent);
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.3s;
         }
         .portfolio-item:hover .portfolio-overlay {
             opacity: 1;
         }
+        .testimonial-card {
+            transition: transform 0.3s;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #0F4C81;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .custom-checkbox {
+            position: relative;
+            cursor: pointer;
+        }
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border: 2px solid #0F4C81;
+            border-radius: 4px;
+        }
+        .custom-checkbox input:checked ~ .checkmark:after {
+            content: "";
+            position: absolute;
+            display: block;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid #0F4C81;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #0F4C81;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-white">
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-white bg-opacity-95 shadow-md">
-        <div class="container mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <a href="#" class="text-3xl font-['Pacifico'] text-primary">logo</a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#" class="text-gray-800 hover:text-primary font-medium">Home</a>
-                    <a href="#" class="text-gray-800 hover:text-primary font-medium">Services</a>
-                    <a href="#" class="text-gray-800 hover:text-primary font-medium">Portfolio</a>
-                    <a href="#" class="text-gray-800 hover:text-primary font-medium">Pricing</a>
-                    <a href="#" class="text-gray-800 hover:text-primary font-medium">Blog</a>
-                    <a href="#" class="text-gray-800 hover:text-primary font-medium">Contact</a>
+    <header class="fixed w-full bg-white bg-opacity-95 shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <h1 class="text-3xl font-['Pacifico'] text-primary">logo</h1>
                 </div>
-                <div class="hidden md:block">
-                    <button class="bg-primary text-white px-6 py-2 rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">Get a Quote</button>
-                </div>
-                <div class="md:hidden w-10 h-10 flex items-center justify-center">
-                    <i class="ri-menu-line ri-lg text-gray-800"></i>
+                <nav class="hidden md:flex space-x-10">
+                    <a href="#" class="nav-link text-gray-800 font-medium">Home</a>
+                    <a href="#services" class="nav-link text-gray-800 font-medium">Services</a>
+                    <a href="#portfolio" class="nav-link text-gray-800 font-medium">Portfolio</a>
+                    <a href="#pricing" class="nav-link text-gray-800 font-medium">Pricing</a>
+                    <a href="#contact" class="nav-link text-gray-800 font-medium">Contact</a>
+                    <a href="#blog" class="nav-link text-gray-800 font-medium">Blog</a>
+                </nav>
+                <div class="flex items-center">
+                    <a href="#contact" class="hidden md:inline-block bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">Get a Quote</a>
+                    <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+                        <i class="ri-menu-line ri-lg"></i>
+                    </button>
                 </div>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section class="hero-section h-screen relative">
+    <section class="hero-section relative h-screen flex items-center">
         <div class="hero-overlay absolute inset-0"></div>
-        <div class="container mx-auto px-6 h-full flex items-center">
-            <div class="w-full md:w-1/2 text-white z-10 pt-20">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Transform Your Space with Professional 3D Design</h1>
-                <p class="text-lg md:text-xl mb-8 text-gray-200 max-w-lg">Elevate your architectural vision with our cutting-edge 3D design and visualization services. Bringing dreams to reality since 2010.</p>
+        <div class="container mx-auto px-6 z-10 w-full">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">Transform Your Space with Professional 3D Design</h1>
+                <p class="text-lg md:text-xl text-gray-700 mb-8">We bring your architectural and interior design visions to life with stunning 3D visualizations and expert planning.</p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <button class="bg-primary text-white px-8 py-3 rounded-button hover:bg-opacity-90 transition-all font-medium whitespace-nowrap">
-                        Get Your 3D Design in 24 Hours
-                    </button>
-                    <button class="bg-white text-primary px-8 py-3 rounded-button hover:bg-gray-100 transition-all font-medium whitespace-nowrap">
-                        View Portfolio
-                    </button>
+                    <a href="#contact" class="bg-primary text-white px-8 py-3 !rounded-button font-medium text-lg hover:bg-opacity-90 transition shadow-lg whitespace-nowrap flex items-center justify-center">
+                        <span>Get Your 3D Design in 24 Hours</span>
+                        <div class="w-6 h-6 ml-2 flex items-center justify-center">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
+                    </a>
+                    <a href="#portfolio" class="border-2 border-primary text-primary px-8 py-3 !rounded-button font-medium text-lg hover:bg-primary hover:text-white transition whitespace-nowrap flex items-center justify-center">
+                        <span>View Our Work</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Overview -->
-    <section class="py-20 bg-white">
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Premium Design Services</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">We offer comprehensive architectural and interior design solutions to transform your space into a masterpiece.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Design Services</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">We offer comprehensive architectural and interior design solutions to transform your spaces with precision and creativity.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="service-card bg-white rounded shadow-lg p-8 transition-all duration-300">
-                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-6">
-                        <i class="ri-building-4-line ri-2x text-primary"></i>
+                <div class="service-card bg-white rounded-lg shadow-md p-8 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-building-4-line ri-xl text-primary"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">3D Architectural Rendering</h3>
-                    <p class="text-gray-600 mb-6">Photorealistic 3D renderings that bring your architectural plans to life with stunning detail and accuracy.</p>
-                    <a href="#" class="text-primary font-medium flex items-center">
-                        Learn More
-                        <i class="ri-arrow-right-line ml-2"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">3D Architectural Rendering</h3>
+                    <p class="text-gray-600 mb-6">Photorealistic 3D visualizations of your building exteriors and interiors before construction begins.</p>
+                    <a href="#" class="text-primary font-medium flex items-center mt-auto">
+                        <span>Learn More</span>
+                        <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
                     </a>
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="service-card bg-white rounded shadow-lg p-8 transition-all duration-300">
-                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-6">
-                        <i class="ri-home-gear-line ri-2x text-primary"></i>
+                <div class="service-card bg-white rounded-lg shadow-md p-8 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-home-gear-line ri-xl text-primary"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Interior Design</h3>
-                    <p class="text-gray-600 mb-6">Comprehensive interior design solutions that balance aesthetics, functionality, and your personal style preferences.</p>
-                    <a href="#" class="text-primary font-medium flex items-center">
-                        Learn More
-                        <i class="ri-arrow-right-line ml-2"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Interior Design Planning</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive interior design services including space planning, material selection, and furniture layout.</p>
+                    <a href="#" class="text-primary font-medium flex items-center mt-auto">
+                        <span>Learn More</span>
+                        <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
                     </a>
                 </div>
                 
                 <!-- Service 3 -->
-                <div class="service-card bg-white rounded shadow-lg p-8 transition-all duration-300">
-                    <div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-6">
-                        <i class="ri-layout-4-line ri-2x text-primary"></i>
+                <div class="service-card bg-white rounded-lg shadow-md p-8 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-layout-2-line ri-xl text-primary"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Floor Plan Design</h3>
-                    <p class="text-gray-600 mb-6">Detailed and optimized floor plans that maximize space utilization while ensuring comfort and functionality.</p>
-                    <a href="#" class="text-primary font-medium flex items-center">
-                        Learn More
-                        <i class="ri-arrow-right-line ml-2"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">3D Floor Plans</h3>
+                    <p class="text-gray-600 mb-6">Detailed 3D floor plans that help you visualize your space and optimize layout before implementation.</p>
+                    <a href="#" class="text-primary font-medium flex items-center mt-auto">
+                        <span>Learn More</span>
+                        <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
                     </a>
                 </div>
             </div>
             
-            <div class="text-center mt-12">
-                <a href="#" class="inline-block border-2 border-primary text-primary px-8 py-3 rounded-button hover:bg-primary hover:text-white transition-all font-medium whitespace-nowrap">
-                    View All Services
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Featured Projects</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Explore our portfolio of stunning architectural designs and interior transformations.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Portfolio Item 1 -->
-                <div class="portfolio-item rounded overflow-hidden shadow-lg relative">
-                    <img src="https://public.readdy.ai/ai/img_res/8bb6300ff50ef3b2df54b7e5145d5171.jpg" alt="Modern Living Room" class="w-full h-64 object-cover object-top">
-                    <div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-70 flex flex-col justify-end p-6">
-                        <span class="text-white text-sm font-medium bg-secondary bg-opacity-90 px-3 py-1 rounded-full inline-block mb-2 w-max">Residential</span>
-                        <h3 class="text-white text-xl font-bold">Oakwood Residence</h3>
-                        <p class="text-gray-100">Modern minimalist interior design</p>
+            <!-- Additional Services -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-8 flex items-start">
+                    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-5 shrink-0">
+                        <i class="ri-compass-3-line ri-lg text-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Vastu Consultation</h3>
+                        <p class="text-gray-600">Expert guidance on Vastu principles to create harmonious and balanced living and working spaces.</p>
                     </div>
                 </div>
                 
-                <!-- Portfolio Item 2 -->
-                <div class="portfolio-item rounded overflow-hidden shadow-lg relative">
-                    <img src="https://public.readdy.ai/ai/img_res/978b6c47d533ae439efe4e7c521c3712.jpg" alt="Office Interior" class="w-full h-64 object-cover object-top">
-                    <div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-70 flex flex-col justify-end p-6">
-                        <span class="text-white text-sm font-medium bg-secondary bg-opacity-90 px-3 py-1 rounded-full inline-block mb-2 w-max">Commercial</span>
-                        <h3 class="text-white text-xl font-bold">Nexus Corporate HQ</h3>
-                        <p class="text-gray-100">Contemporary office design</p>
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-8 flex items-start">
+                    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-5 shrink-0">
+                        <i class="ri-vip-crown-line ri-lg text-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Luxury Design</h3>
+                        <p class="text-gray-600">Premium design services for high-end residential and commercial projects with exclusive materials.</p>
                     </div>
                 </div>
                 
-                <!-- Portfolio Item 3 -->
-                <div class="portfolio-item rounded overflow-hidden shadow-lg relative">
-                    <img src="https://public.readdy.ai/ai/img_res/eba7a3775f3b936d4ded2b97e124443a.jpg" alt="Restaurant Design" class="w-full h-64 object-cover object-top">
-                    <div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-70 flex flex-col justify-end p-6">
-                        <span class="text-white text-sm font-medium bg-secondary bg-opacity-90 px-3 py-1 rounded-full inline-block mb-2 w-max">Hospitality</span>
-                        <h3 class="text-white text-xl font-bold">Elysian Restaurant</h3>
-                        <p class="text-gray-100">Luxury dining experience</p>
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-8 flex items-start">
+                    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-5 shrink-0">
+                        <i class="ri-virtual-reality-line ri-lg text-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Virtual Walkthroughs</h3>
+                        <p class="text-gray-600">Immersive 3D virtual tours that allow you to experience your space before it's built.</p>
                     </div>
                 </div>
                 
-                <!-- Portfolio Item 4 -->
-                <div class="portfolio-item rounded overflow-hidden shadow-lg relative">
-                    <img src="https://public.readdy.ai/ai/img_res/d82e307b846e3acff05510d4e1a9c1fe.jpg" alt="Bathroom Design" class="w-full h-64 object-cover object-top">
-                    <div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-70 flex flex-col justify-end p-6">
-                        <span class="text-white text-sm font-medium bg-secondary bg-opacity-90 px-3 py-1 rounded-full inline-block mb-2 w-max">Residential</span>
-                        <h3 class="text-white text-xl font-bold">Serene Bathroom</h3>
-                        <p class="text-gray-100">Luxury bathroom renovation</p>
+                <!-- Service 7 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-8 flex items-start">
+                    <div class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-5 shrink-0">
+                        <i class="ri-landscape-line ri-lg text-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Landscape Design</h3>
+                        <p class="text-gray-600">Creative outdoor space planning that complements your architecture with sustainable solutions.</p>
                     </div>
                 </div>
-                
-                <!-- Portfolio Item 5 -->
-                <div class="portfolio-item rounded overflow-hidden shadow-lg relative">
-                    <img src="https://public.readdy.ai/ai/img_res/433b9ab71b101524ec00426b7ee48051.jpg" alt="Kitchen Design" class="w-full h-64 object-cover object-top">
-                    <div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-70 flex flex-col justify-end p-6">
-                        <span class="text-white text-sm font-medium bg-secondary bg-opacity-90 px-3 py-1 rounded-full inline-block mb-2 w-max">Residential</span>
-                        <h3 class="text-white text-xl font-bold">Contemporary Kitchen</h3>
-                        <p class="text-gray-100">Modern kitchen redesign</p>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 6 -->
-                <div class="portfolio-item rounded overflow-hidden shadow-lg relative">
-                    <img src="https://public.readdy.ai/ai/img_res/db0e335470949c24be30734c744ec5ea.jpg" alt="Building Exterior" class="w-full h-64 object-cover object-top">
-                    <div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-70 flex flex-col justify-end p-6">
-                        <span class="text-white text-sm font-medium bg-secondary bg-opacity-90 px-3 py-1 rounded-full inline-block mb-2 w-max">Commercial</span>
-                        <h3 class="text-white text-xl font-bold">Azure Tower</h3>
-                        <p class="text-gray-100">Modern commercial building</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#" class="inline-block bg-primary text-white px-8 py-3 rounded-button hover:bg-opacity-90 transition-all font-medium whitespace-nowrap">
-                    View All Projects
-                </a>
             </div>
         </div>
     </section>
@@ -295,43 +306,259 @@
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">See the Transformation</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Witness the power of 3D visualization by comparing before and after designs.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">See the Transformation</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Drag the slider to see how our 3D design transforms concepts into stunning visual realities.</p>
             </div>
             
-            <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                <div class="relative h-[400px] md:h-[500px] overflow-hidden rounded">
-                    <img src="https://public.readdy.ai/ai/img_res/063a6172bb8468e7e06d9a0955d7163e.jpg" alt="Before Renovation" class="absolute top-0 left-0 w-full h-full object-cover object-top">
-                    <div class="absolute top-0 left-0 w-1/2 h-full overflow-hidden">
-                        <img src="https://public.readdy.ai/ai/img_res/bcdc4597bb2c3742eba4b464bcd9ff8c.jpg" alt="After Renovation" class="absolute top-0 left-0 w-[calc(100%*2)] h-full object-cover object-top">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="relative h-[500px]">
+                    <div class="absolute inset-0 z-10">
+                        <img src="https://public.readdy.ai/ai/img_res/c9a48ac736dd046acb69bb42649e8cb6.jpg" alt="Before: Architectural Blueprint" class="w-full h-full object-cover object-top">
                     </div>
-                    <div class="absolute top-0 left-1/2 h-full w-0.5 bg-white cursor-ew-resize flex items-center justify-center">
-                        <div class="w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center">
-                            <i class="ri-arrow-left-right-line text-primary"></i>
+                    <div class="absolute inset-0 clip-path z-0">
+                        <img src="https://public.readdy.ai/ai/img_res/adf01241fbdedc92c006b5565a3c7698.jpg" alt="After: 3D Rendering" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="absolute inset-y-0 left-1/2 w-1 bg-white z-20 transform -translate-x-1/2"></div>
+                    <div class="absolute top-1/2 left-1/2 w-10 h-10 rounded-full bg-white shadow-md z-30 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center cursor-pointer">
+                        <div class="w-6 h-6 flex items-center justify-center text-primary">
+                            <i class="ri-arrow-left-right-line"></i>
                         </div>
                     </div>
-                    <div class="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white px-4 py-2 rounded text-sm">Before</div>
-                    <div class="absolute bottom-4 right-4 bg-primary bg-opacity-90 text-white px-4 py-2 rounded text-sm">After</div>
+                    <div class="absolute bottom-4 left-4 bg-primary text-white px-4 py-2 rounded-md z-20">Before</div>
+                    <div class="absolute bottom-4 right-4 bg-primary text-white px-4 py-2 rounded-md z-20">After</div>
+                </div>
+                <div class="p-6 bg-gray-50">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Modern Living Room Transformation</h3>
+                    <p class="text-gray-600">From concept sketches to photorealistic 3D visualization, see how we bring designs to life with precise detail and stunning visuals.</p>
+                    <div class="mt-4">
+                        <input type="range" min="0" max="100" value="50" class="w-full h-2 bg-gray-200 rounded-full appearance-none cursor-pointer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Portfolio</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Explore our collection of stunning 3D architectural visualizations and interior design projects.</p>
+            </div>
+            
+            <!-- Portfolio Filter -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <div class="inline-flex bg-white rounded-full p-1 shadow-sm">
+                    <button class="px-6 py-2 rounded-full bg-primary text-white whitespace-nowrap">All Projects</button>
+                    <button class="px-6 py-2 rounded-full text-gray-700 hover:bg-gray-100 whitespace-nowrap">Residential</button>
+                    <button class="px-6 py-2 rounded-full text-gray-700 hover:bg-gray-100 whitespace-nowrap">Commercial</button>
+                    <button class="px-6 py-2 rounded-full text-gray-700 hover:bg-gray-100 whitespace-nowrap">Interior</button>
+                    <button class="px-6 py-2 rounded-full text-gray-700 hover:bg-gray-100 whitespace-nowrap">Landscape</button>
+                </div>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item rounded-lg overflow-hidden shadow-md bg-white">
+                    <div class="relative h-64">
+                        <img src="https://public.readdy.ai/ai/img_res/df18ae540df4d749e377f35d98c3828b.jpg" alt="Modern Villa Exterior" class="w-full h-full object-cover object-top">
+                        <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-6">
+                            <span class="text-white text-sm font-medium bg-primary bg-opacity-80 py-1 px-3 rounded-full inline-block mb-2 w-max">Residential</span>
+                            <h3 class="text-white text-xl font-semibold">Modern Villa Exterior</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">A contemporary villa design featuring clean lines, expansive glass facades, and seamless indoor-outdoor living spaces.</p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            <span>View Project</span>
+                            <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item rounded-lg overflow-hidden shadow-md bg-white">
+                    <div class="relative h-64">
+                        <img src="https://public.readdy.ai/ai/img_res/c490d5b279fe8b6a2f0d3dfca23db4d5.jpg" alt="Luxury Kitchen Design" class="w-full h-full object-cover object-top">
+                        <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-6">
+                            <span class="text-white text-sm font-medium bg-primary bg-opacity-80 py-1 px-3 rounded-full inline-block mb-2 w-max">Interior</span>
+                            <h3 class="text-white text-xl font-semibold">Luxury Kitchen Design</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">A high-end kitchen featuring custom cabinetry, premium appliances, and a thoughtful layout for both functionality and aesthetics.</p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            <span>View Project</span>
+                            <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item rounded-lg overflow-hidden shadow-md bg-white">
+                    <div class="relative h-64">
+                        <img src="https://public.readdy.ai/ai/img_res/ef09b3a0334c98d4b5a88eac32b4c40c.jpg" alt="Corporate Office Space" class="w-full h-full object-cover object-top">
+                        <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-6">
+                            <span class="text-white text-sm font-medium bg-primary bg-opacity-80 py-1 px-3 rounded-full inline-block mb-2 w-max">Commercial</span>
+                            <h3 class="text-white text-xl font-semibold">Corporate Office Space</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">A modern office design that balances collaborative spaces with private work areas, featuring ergonomic furniture and brand integration.</p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            <span>View Project</span>
+                            <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item rounded-lg overflow-hidden shadow-md bg-white">
+                    <div class="relative h-64">
+                        <img src="https://public.readdy.ai/ai/img_res/7cdb876a20d6603d77e92aec1dcdf6c7.jpg" alt="Master Bedroom Suite" class="w-full h-full object-cover object-top">
+                        <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-6">
+                            <span class="text-white text-sm font-medium bg-primary bg-opacity-80 py-1 px-3 rounded-full inline-block mb-2 w-max">Interior</span>
+                            <h3 class="text-white text-xl font-semibold">Master Bedroom Suite</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">A sophisticated bedroom design featuring custom millwork, integrated lighting, and a carefully curated material palette for ultimate comfort.</p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            <span>View Project</span>
+                            <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item rounded-lg overflow-hidden shadow-md bg-white">
+                    <div class="relative h-64">
+                        <img src="https://public.readdy.ai/ai/img_res/4b8bbbb56caa0c3669c80631731646e5.jpg" alt="Rooftop Garden Design" class="w-full h-full object-cover object-top">
+                        <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-6">
+                            <span class="text-white text-sm font-medium bg-primary bg-opacity-80 py-1 px-3 rounded-full inline-block mb-2 w-max">Landscape</span>
+                            <h3 class="text-white text-xl font-semibold">Rooftop Garden Design</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">An urban oasis featuring drought-tolerant plantings, modular seating, and integrated shade structures with stunning city views.</p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            <span>View Project</span>
+                            <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item rounded-lg overflow-hidden shadow-md bg-white">
+                    <div class="relative h-64">
+                        <img src="https://public.readdy.ai/ai/img_res/d666fd500e953e3356a1e829282554e8.jpg" alt="Retail Store Design" class="w-full h-full object-cover object-top">
+                        <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-6">
+                            <span class="text-white text-sm font-medium bg-primary bg-opacity-80 py-1 px-3 rounded-full inline-block mb-2 w-max">Commercial</span>
+                            <h3 class="text-white text-xl font-semibold">Retail Store Design</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">A customer-focused retail environment with custom fixtures, strategic lighting, and a layout designed to maximize product visibility and sales.</p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            <span>View Project</span>
+                            <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-white border-2 border-primary text-primary px-8 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition shadow-sm whitespace-nowrap">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">3D Walkthrough Experience</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Experience our designs in motion with immersive 3D walkthroughs that showcase every detail.</p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="relative aspect-video">
+                    <img src="https://public.readdy.ai/ai/img_res/81b4206660ff5ac7645081c9df4a4231.jpg" alt="3D Walkthrough Video" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                        <button class="w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center shadow-lg transform transition hover:scale-110">
+                            <div class="w-12 h-12 flex items-center justify-center text-primary">
+                                <i class="ri-play-fill ri-2x"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Luxury Residence Virtual Tour</h3>
+                    <p class="text-gray-600">Take a virtual walk through this stunning modern residence featuring open living spaces, custom details, and seamless indoor-outdoor flow.</p>
+                    <div class="flex items-center mt-4">
+                        <div class="flex space-x-1">
+                            <span class="w-3 h-3 bg-primary rounded-full"></span>
+                            <span class="w-3 h-3 bg-gray-300 rounded-full"></span>
+                            <span class="w-3 h-3 bg-gray-300 rounded-full"></span>
+                            <span class="w-3 h-3 bg-gray-300 rounded-full"></span>
+                        </div>
+                        <div class="ml-auto flex space-x-2">
+                            <button class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-gray-600">
+                                    <i class="ri-arrow-left-s-line"></i>
+                                </div>
+                            </button>
+                            <button class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                                <div class="w-5 h-5 flex items-center justify-center text-white">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section class="py-20 bg-gray-50">
+    <section id="pricing" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Transparent Pricing Plans</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Choose the perfect package for your design needs with our straightforward pricing.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Transparent Pricing</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Choose the package that fits your project needs or contact us for custom solutions.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Pricing Toggle -->
+            <div class="flex justify-center items-center mb-12">
+                <span class="text-gray-700 font-medium">Monthly</span>
+                <label class="switch mx-4">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+                <span class="text-gray-700 font-medium">Annual <span class="text-xs text-primary font-bold">Save 20%</span></span>
+            </div>
+            
+            <!-- Pricing Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Basic Plan -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
-                    <div class="p-8 border-b">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Basic Package</h3>
-                        <div class="flex items-end mb-4">
-                            <span class="text-4xl font-bold text-primary">$499</span>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-2">
+                    <div class="p-8 border-b border-gray-100">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Basic Plan</h3>
+                        <div class="flex items-end mb-6">
+                            <span class="text-4xl font-bold text-gray-900">$499</span>
                             <span class="text-gray-600 ml-2">/ project</span>
                         </div>
                         <p class="text-gray-600">Perfect for small residential projects and basic visualizations.</p>
@@ -339,45 +566,57 @@
                     <div class="p-8">
                         <ul class="space-y-4">
                             <li class="flex items-start">
-                                <i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center text-primary mr-3">
+                                    <i class="ri-check-line"></i>
+                                </div>
                                 <span class="text-gray-700">2 Exterior 3D Renderings</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center text-primary mr-3">
+                                    <i class="ri-check-line"></i>
+                                </div>
                                 <span class="text-gray-700">1 Interior 3D Rendering</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="ri-check-line text-green-500 mr-3 mt-1"></i>
-                                <span class="text-gray-700">Basic Floor Plan</span>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center text-primary mr-3">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="text-gray-700">Basic 2D Floor Plan</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="ri-check-line text-green-500 mr-3 mt-1"></i>
-                                <span class="text-gray-700">1 Revision Round</span>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center text-primary mr-3">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="text-gray-700">1 Revision Included</span>
                             </li>
                             <li class="flex items-start text-gray-400">
-                                <i class="ri-close-line mr-3 mt-1"></i>
-                                <span>Virtual Tour</span>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center mr-3">
+                                    <i class="ri-close-line"></i>
+                                </div>
+                                <span>3D Floor Plans</span>
                             </li>
                             <li class="flex items-start text-gray-400">
-                                <i class="ri-close-line mr-3 mt-1"></i>
-                                <span>Material Specifications</span>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center mr-3">
+                                    <i class="ri-close-line"></i>
+                                </div>
+                                <span>Virtual Walkthrough</span>
                             </li>
                         </ul>
-                        <button class="w-full mt-8 bg-white border-2 border-primary text-primary px-6 py-3 rounded-button hover:bg-primary hover:text-white transition-all font-medium whitespace-nowrap">
-                            Select Plan
-                        </button>
+                        <a href="#contact" class="block text-center bg-white border-2 border-primary text-primary mt-8 px-6 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition whitespace-nowrap">Get Started</a>
                     </div>
                 </div>
                 
-                <!-- Pro Plan -->
+                <!-- Premium Plan -->
                 <div class="bg-white rounded-lg shadow-xl overflow-hidden transform scale-105 relative z-10">
-                    <div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-4 py-1">
-                        MOST POPULAR
+                    <div class="absolute top-0 right-0">
+                        <div class="bg-secondary text-white text-xs font-bold px-4 py-1 transform rotate-45 translate-x-[30%] translate-y-[120%]">
+                            POPULAR
+                        </div>
                     </div>
-                    <div class="p-8 border-b bg-primary bg-opacity-5">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Professional Package</h3>
-                        <div class="flex items-end mb-4">
-                            <span class="text-4xl font-bold text-primary">$999</span>
+                    <div class="p-8 border-b border-gray-100 bg-primary bg-opacity-5">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Premium Plan</h3>
+                        <div class="flex items-end mb-6">
+                            <span class="text-4xl font-bold text-gray-900">$999</span>
                             <span class="text-gray-600 ml-2">/ project</span>
                         </div>
                         <p class="text-gray-600">Ideal for medium-sized residential and small commercial projects.</p>
@@ -385,42 +624,52 @@
                     <div class="p-8">
                         <ul class="space-y-4">
                             <li class="flex items-start">
-                                <i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center text-primary mr-3">
+                                    <i class="ri-check-line"></i>
+                                </div>
                                 <span class="text-gray-700">4 Exterior 3D Renderings</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center text-primary mr-3">
+                                    <i class="ri-check-line"></i>
+                                </div>
                                 <span class="text-gray-700">3 Interior 3D Renderings</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="ri-check-line text-green-500 mr-3 mt-1"></i>
-                                <span class="text-gray-700">Detailed Floor Plan</span>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center text-primary mr-3">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="text-gray-700">3D Floor Plan</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="ri-check-line text-green-500 mr-3 mt-1"></i>
-                                <span class="text-gray-700">2 Revision Rounds</span>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center text-primary mr-3">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="text-gray-700">2 Revisions Included</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="ri-check-line text-green-500 mr-3 mt-1"></i>
-                                <span class="text-gray-700">Basic Virtual Tour</span>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center text-primary mr-3">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="text-gray-700">Material Selection Guidance</span>
                             </li>
                             <li class="flex items-start text-gray-400">
-                                <i class="ri-close-line mr-3 mt-1"></i>
-                                <span>Material Specifications</span>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center mr-3">
+                                    <i class="ri-close-line"></i>
+                                </div>
+                                <span>Virtual Walkthrough</span>
                             </li>
                         </ul>
-                        <button class="w-full mt-8 bg-primary text-white px-6 py-3 rounded-button hover:bg-opacity-90 transition-all font-medium whitespace-nowrap">
-                            Select Plan
-                        </button>
+                        <a href="#contact" class="block text-center bg-primary text-white mt-8 px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition shadow-md whitespace-nowrap">Get Started</a>
                     </div>
                 </div>
                 
-                <!-- Premium Plan -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
-                    <div class="p-8 border-b">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Premium Package</h3>
-                        <div class="flex items-end mb-4">
-                            <span class="text-4xl font-bold text-primary">$1,999</span>
+                <!-- Enterprise Plan -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-2">
+                    <div class="p-8 border-b border-gray-100">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Enterprise Plan</h3>
+                        <div class="flex items-end mb-6">
+                            <span class="text-4xl font-bold text-gray-900">$1,999</span>
                             <span class="text-gray-600 ml-2">/ project</span>
                         </div>
                         <p class="text-gray-600">Comprehensive solution for large residential and commercial projects.</p>
@@ -428,43 +677,81 @@
                     <div class="p-8">
                         <ul class="space-y-4">
                             <li class="flex items-start">
-                                <i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center text-primary mr-3">
+                                    <i class="ri-check-line"></i>
+                                </div>
                                 <span class="text-gray-700">6 Exterior 3D Renderings</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center text-primary mr-3">
+                                    <i class="ri-check-line"></i>
+                                </div>
                                 <span class="text-gray-700">5 Interior 3D Renderings</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="ri-check-line text-green-500 mr-3 mt-1"></i>
-                                <span class="text-gray-700">Complete Floor Plans</span>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center text-primary mr-3">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="text-gray-700">Complete 3D Floor Plans</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center text-primary mr-3">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="text-gray-700">Virtual Walkthrough</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center text-primary mr-3">
+                                    <i class="ri-check-line"></i>
+                                </div>
                                 <span class="text-gray-700">Unlimited Revisions</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="ri-check-line text-green-500 mr-3 mt-1"></i>
-                                <span class="text-gray-700">Interactive Virtual Tour</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="ri-check-line text-green-500 mr-3 mt-1"></i>
-                                <span class="text-gray-700">Material Specifications</span>
+                                <div class="w-5 h-5 mt-0.5 flex items-center justify-center text-primary mr-3">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <span class="text-gray-700">Priority Support</span>
                             </li>
                         </ul>
-                        <button class="w-full mt-8 bg-white border-2 border-primary text-primary px-6 py-3 rounded-button hover:bg-primary hover:text-white transition-all font-medium whitespace-nowrap">
-                            Select Plan
-                        </button>
+                        <a href="#contact" class="block text-center bg-white border-2 border-primary text-primary mt-8 px-6 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition whitespace-nowrap">Get Started</a>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-12 bg-gray-100 p-8 rounded-lg shadow-md">
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">Need a Custom Solution?</h3>
-                <p class="text-gray-600 mb-6 max-w-2xl mx-auto">We understand that every project is unique. Contact us for a personalized quote tailored to your specific requirements.</p>
-                <button class="bg-primary text-white px-8 py-3 rounded-button hover:bg-opacity-90 transition-all font-medium whitespace-nowrap">
-                    Request Custom Quote
-                </button>
+            <!-- Custom Quote -->
+            <div class="mt-16 bg-white rounded-lg shadow-md p-8 max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-2/3 mb-6 md:mb-0 md:pr-8">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Need a Custom Solution?</h3>
+                        <p class="text-gray-600 mb-4">Our packages can be tailored to your specific project requirements. Contact us for a personalized quote.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <label class="flex items-center">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" class="opacity-0 absolute">
+                                    <span class="checkmark"></span>
+                                </div>
+                                <span class="ml-7 text-gray-700">Large Commercial Project</span>
+                            </label>
+                            <label class="flex items-center">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" class="opacity-0 absolute">
+                                    <span class="checkmark"></span>
+                                </div>
+                                <span class="ml-7 text-gray-700">Multiple Properties</span>
+                            </label>
+                            <label class="flex items-center">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" class="opacity-0 absolute">
+                                    <span class="checkmark"></span>
+                                </div>
+                                <span class="ml-7 text-gray-700">Ongoing Partnership</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3 flex justify-center">
+                        <a href="#contact" class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition shadow-md whitespace-nowrap w-full text-center">Request Custom Quote</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -473,200 +760,220 @@
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Hear from our satisfied clients about their experience working with our design team.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Hear from architects, developers, and homeowners who have transformed their projects with our 3D design services.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Testimonial 1 -->
-                <div class="testimonial-card bg-gray-50 rounded-lg p-8 shadow-md">
-                    <div class="flex mb-6">
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 flex">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
                     </div>
-                    <p class="text-gray-700 mb-6 italic">"The 3D renderings were incredibly detailed and helped us visualize our dream home before construction even began. The team was responsive and incorporated all our feedback seamlessly."</p>
+                    <p class="text-gray-700 mb-6">"The 3D renderings were incredibly detailed and helped us visualize our home before construction. This saved us from making costly changes during the build process. Highly recommended!"</p>
                     <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4 flex items-center justify-center">
-                            <i class="ri-user-3-fill ri-lg text-gray-500"></i>
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+                            <img src="https://public.readdy.ai/ai/img_res/02b4c9ba7d9fe05b83908b40de004a7c.jpg" alt="Robert Johnson" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-800">Michael Richardson</h4>
-                            <p class="text-gray-600 text-sm">Residential Client</p>
+                            <h4 class="text-gray-900 font-medium">Robert Johnson</h4>
+                            <p class="text-gray-600 text-sm">Homeowner, California</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 2 -->
-                <div class="testimonial-card bg-gray-50 rounded-lg p-8 shadow-md">
-                    <div class="flex mb-6">
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 flex">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
                     </div>
-                    <p class="text-gray-700 mb-6 italic">"As a real estate developer, I've worked with many design firms, but this team stands out. Their attention to detail and quick turnaround time has made them our go-to partner for all our visualization needs."</p>
+                    <p class="text-gray-700 mb-6">"As an architect, I needed precise 3D visualizations for client presentations. The team delivered exceptional quality renderings that helped secure project approval. Their attention to detail is outstanding."</p>
                     <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4 flex items-center justify-center">
-                            <i class="ri-user-3-fill ri-lg text-gray-500"></i>
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+                            <img src="https://public.readdy.ai/ai/img_res/009e97370792f589e7ce807ff3e63410.jpg" alt="Sarah Martinez" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-800">Jennifer Lawson</h4>
-                            <p class="text-gray-600 text-sm">Horizon Properties</p>
+                            <h4 class="text-gray-900 font-medium">Sarah Martinez</h4>
+                            <p class="text-gray-600 text-sm">Principal Architect, Martinez Design</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 3 -->
-                <div class="testimonial-card bg-gray-50 rounded-lg p-8 shadow-md">
-                    <div class="flex mb-6">
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-fill text-yellow-400"></i>
-                        <i class="ri-star-half-fill text-yellow-400"></i>
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 flex">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-half-fill"></i>
+                        </div>
                     </div>
-                    <p class="text-gray-700 mb-6 italic">"The virtual tour they created for our restaurant helped us secure investors before we even broke ground. Their design suggestions also improved our original concept significantly."</p>
+                    <p class="text-gray-700 mb-6">"We needed 3D renderings for our retail chain expansion. The team delivered high-quality visualizations that helped our stakeholders understand the concept. Fast turnaround and excellent communication."</p>
                     <div class="flex items-center">
-                        <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4 flex items-center justify-center">
-                            <i class="ri-user-3-fill ri-lg text-gray-500"></i>
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+                            <img src="https://public.readdy.ai/ai/img_res/859b5b33c63c4a6c4c7ae5ca2068fd3f.jpg" alt="David Chen" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold text-gray-800">David Chen</h4>
-                            <p class="text-gray-600 text-sm">Fusion Restaurant</p>
+                            <h4 class="text-gray-900 font-medium">David Chen</h4>
+                            <p class="text-gray-600 text-sm">Development Director, Retail Group</p>
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-10">
+                <div class="flex space-x-2">
+                    <button class="w-3 h-3 rounded-full bg-primary"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300"></button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="py-20 bg-gray-50">
+    <section id="contact" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Ready to transform your space? Contact us for a consultation or to request a quote.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
                 <!-- Contact Form -->
-                <div class="w-full md:w-1/2 md:pr-8 mb-12 md:mb-0">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Get in Touch</h2>
-                    <p class="text-gray-600 mb-8">Have a project in mind? Fill out the form below and our design experts will get back to you within 24 hours.</p>
-                    
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Send Us a Message</h3>
                     <form>
-                        <div class="mb-6">
-                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Enter your name">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700" placeholder="John Smith">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700" placeholder="john@example.com">
+                            </div>
                         </div>
-                        
-                        <div class="mb-6">
-                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Enter your email">
-                        </div>
-                        
                         <div class="mb-6">
                             <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
-                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Enter your phone number">
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700" placeholder="+1 (555) 123-4567">
                         </div>
-                        
                         <div class="mb-6">
                             <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested In</label>
                             <div class="relative">
-                                <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary appearance-none pr-8">
-                                    <option value="" disabled selected>Select a service</option>
+                                <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700 appearance-none pr-8">
+                                    <option value="" selected disabled>Select a service</option>
                                     <option value="3d-rendering">3D Architectural Rendering</option>
-                                    <option value="interior-design">Interior Design</option>
-                                    <option value="floor-plan">Floor Plan Design</option>
-                                    <option value="virtual-tour">Virtual Tour</option>
+                                    <option value="interior-design">Interior Design Planning</option>
+                                    <option value="3d-floor-plan">3D Floor Plans</option>
+                                    <option value="vastu">Vastu Consultation</option>
+                                    <option value="virtual-walkthrough">Virtual Walkthrough</option>
                                     <option value="other">Other</option>
                                 </select>
-                                <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                                    <i class="ri-arrow-down-s-line text-gray-500"></i>
+                                <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none w-5 h-5 flex items-center justify-center text-gray-600">
+                                    <i class="ri-arrow-down-s-line"></i>
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="mb-6">
                             <label for="message" class="block text-gray-700 font-medium mb-2">Project Details</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Tell us about your project"></textarea>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-gray-700" placeholder="Tell us about your project..."></textarea>
                         </div>
-                        
-                        <div class="mb-8 flex items-center">
-                            <div class="custom-checkbox" id="privacy-checkbox"></div>
-                            <label for="privacy-checkbox" class="ml-3 text-gray-700 cursor-pointer">I agree to the <a href="#" class="text-primary">Privacy Policy</a> and <a href="#" class="text-primary">Terms of Service</a>.</label>
+                        <div class="mb-6">
+                            <label class="flex items-center">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" class="opacity-0 absolute">
+                                    <span class="checkmark"></span>
+                                </div>
+                                <span class="ml-7 text-gray-700">I agree to the <a href="#" class="text-primary">Privacy Policy</a> and <a href="#" class="text-primary">Terms of Service</a></span>
+                            </label>
                         </div>
-                        
-                        <button type="submit" class="bg-primary text-white px-8 py-3 rounded-button hover:bg-opacity-90 transition-all font-medium whitespace-nowrap">
-                            Send Message
-                        </button>
+                        <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition shadow-md whitespace-nowrap">Submit Request</button>
                     </form>
                 </div>
                 
-                <!-- Map and Contact Info -->
-                <div class="w-full md:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png')"></div>
-                    <div class="p-8">
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Our Office</h3>
-                        
-                        <div class="space-y-4">
+                <!-- Contact Information & Map -->
+                <div>
+                    <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
+                        <div class="space-y-6">
                             <div class="flex items-start">
-                                <div class="w-10 h-10 flex items-center justify-center mr-4 bg-blue-50 rounded-full">
+                                <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                                     <i class="ri-map-pin-line text-primary"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-800">Address</h4>
-                                    <p class="text-gray-600">123 Design Avenue, Creative District, New York, NY 10001</p>
+                                    <h4 class="text-gray-900 font-medium mb-1">Office Address</h4>
+                                    <p class="text-gray-600">123 Design Avenue, Suite 500<br>San Francisco, CA 94107</p>
                                 </div>
                             </div>
-                            
                             <div class="flex items-start">
-                                <div class="w-10 h-10 flex items-center justify-center mr-4 bg-blue-50 rounded-full">
+                                <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                                     <i class="ri-phone-line text-primary"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-800">Phone</h4>
-                                    <p class="text-gray-600">+1 (555) 123-4567</p>
+                                    <h4 class="text-gray-900 font-medium mb-1">Phone Number</h4>
+                                    <p class="text-gray-600">+1 (415) 555-0123</p>
                                 </div>
                             </div>
-                            
                             <div class="flex items-start">
-                                <div class="w-10 h-10 flex items-center justify-center mr-4 bg-blue-50 rounded-full">
+                                <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                                     <i class="ri-mail-line text-primary"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-800">Email</h4>
-                                    <p class="text-gray-600">info@3darchitectstudio.com</p>
+                                    <h4 class="text-gray-900 font-medium mb-1">Email Address</h4>
+                                    <p class="text-gray-600">info@3darchdesign.com</p>
                                 </div>
                             </div>
-                            
                             <div class="flex items-start">
-                                <div class="w-10 h-10 flex items-center justify-center mr-4 bg-blue-50 rounded-full">
+                                <div class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                                     <i class="ri-time-line text-primary"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-800">Working Hours</h4>
-                                    <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                                    <p class="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
+                                    <h4 class="text-gray-900 font-medium mb-1">Business Hours</h4>
+                                    <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM</p>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="mt-8">
-                            <h4 class="font-medium text-gray-800 mb-3">Follow Us</h4>
-                            <div class="flex space-x-4">
-                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white rounded-full transition-all">
-                                    <i class="ri-facebook-fill"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white rounded-full transition-all">
-                                    <i class="ri-instagram-line"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white rounded-full transition-all">
-                                    <i class="ri-pinterest-line"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-primary hover:text-white rounded-full transition-all">
-                                    <i class="ri-linkedin-fill"></i>
-                                </a>
-                            </div>
+                        <div class="mt-8 flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition">
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition">
+                                <i class="ri-pinterest-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Map -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden h-[300px] relative">
+                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png')"></div>
+                        <div class="absolute bottom-4 right-4">
+                            <a href="https://maps.google.com" target="_blank" class="bg-white text-primary px-4 py-2 rounded-full shadow-md font-medium text-sm flex items-center">
+                                <span>Get Directions</span>
+                                <div class="w-4 h-4 ml-1 flex items-center justify-center">
+                                    <i class="ri-arrow-right-up-line"></i>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -674,18 +981,135 @@
         </div>
     </section>
 
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Design Insights</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Explore our blog for the latest trends, tips, and inspiration in architecture and interior design.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-2">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/f6b2f7b6452f7818cbd3839a62dfb880.jpg" alt="Interior Design Trends" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span class="flex items-center">
+                                <div class="w-4 h-4 mr-1 flex items-center justify-center">
+                                    <i class="ri-calendar-line"></i>
+                                </div>
+                                April 1, 2025
+                            </span>
+                            <span class="mx-2">•</span>
+                            <span class="flex items-center">
+                                <div class="w-4 h-4 mr-1 flex items-center justify-center">
+                                    <i class="ri-time-line"></i>
+                                </div>
+                                5 min read
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">2025 Interior Design Trends to Watch</h3>
+                        <p class="text-gray-600 mb-4">Discover the emerging interior design trends that are shaping residential and commercial spaces in 2025.</p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            <span>Read Article</span>
+                            <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-2">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/e4af1500d9e7ac1f331de78d3f42d017.jpg" alt="3D Rendering Technology" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span class="flex items-center">
+                                <div class="w-4 h-4 mr-1 flex items-center justify-center">
+                                    <i class="ri-calendar-line"></i>
+                                </div>
+                                March 28, 2025
+                            </span>
+                            <span class="mx-2">•</span>
+                            <span class="flex items-center">
+                                <div class="w-4 h-4 mr-1 flex items-center justify-center">
+                                    <i class="ri-time-line"></i>
+                                </div>
+                                7 min read
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">How 3D Rendering Technology is Revolutionizing Architecture</h3>
+                        <p class="text-gray-600 mb-4">Explore how advanced 3D visualization tools are changing the way architects design and clients experience spaces.</p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            <span>Read Article</span>
+                            <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:-translate-y-2">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://public.readdy.ai/ai/img_res/5181233d59065ef64f33264ea6475202.jpg" alt="Vastu Principles" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span class="flex items-center">
+                                <div class="w-4 h-4 mr-1 flex items-center justify-center">
+                                    <i class="ri-calendar-line"></i>
+                                </div>
+                                March 15, 2025
+                            </span>
+                            <span class="mx-2">•</span>
+                            <span class="flex items-center">
+                                <div class="w-4 h-4 mr-1 flex items-center justify-center">
+                                    <i class="ri-time-line"></i>
+                                </div>
+                                6 min read
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Incorporating Vastu Principles in Modern Home Design</h3>
+                        <p class="text-gray-600 mb-4">Learn how traditional Vastu Shastra principles can be integrated into contemporary architecture for harmony and balance.</p>
+                        <a href="#" class="text-primary font-medium flex items-center">
+                            <span>Read Article</span>
+                            <div class="w-5 h-5 ml-1 flex items-center justify-center">
+                                <i class="ri-arrow-right-line"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-white border-2 border-primary text-primary px-8 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition shadow-sm whitespace-nowrap">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
-    <section class="py-20 bg-primary text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Space?</h2>
-            <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">Get professional 3D architectural designs and visualizations delivered within 24 hours.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <button class="bg-white text-primary px-8 py-3 rounded-button hover:bg-gray-100 transition-all font-medium whitespace-nowrap">
-                    Get Started Now
-                </button>
-                <button class="border-2 border-white text-white px-8 py-3 rounded-button hover:bg-white hover:text-primary transition-all font-medium whitespace-nowrap">
-                    View Portfolio
-                </button>
+    <section class="py-20 bg-primary bg-opacity-5">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Ready to Transform Your Space?</h2>
+                <p class="text-lg text-gray-600 mb-8">Get professional 3D architectural visualizations and interior designs that bring your vision to life.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact" class="bg-primary text-white px-8 py-3 !rounded-button font-medium text-lg hover:bg-opacity-90 transition shadow-lg whitespace-nowrap flex items-center justify-center">
+                        <span>Get Your 3D Design in 24 Hours</span>
+                        <div class="w-6 h-6 ml-2 flex items-center justify-center">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
+                    </a>
+                    <a href="#portfolio" class="border-2 border-primary text-primary px-8 py-3 !rounded-button font-medium text-lg hover:bg-primary hover:text-white transition whitespace-nowrap flex items-center justify-center">
+                        <span>Explore Our Work</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -693,91 +1117,91 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <!-- Company Info -->
                 <div>
-                    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">logo</a>
-                    <p class="text-gray-400 mb-6">We specialize in creating stunning 3D architectural visualizations and interior designs that bring your vision to life.</p>
+                    <h1 class="text-3xl font-['Pacifico'] text-white mb-6">logo</h1>
+                    <p class="text-gray-400 mb-6">Professional 3D architectural visualization and interior design services for residential and commercial projects.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full transition-all">
+                        <a href="#" class="w-10 h-10 border border-gray-700 rounded-full flex items-center justify-center hover:bg-primary hover:border-primary transition">
                             <i class="ri-facebook-fill"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full transition-all">
+                        <a href="#" class="w-10 h-10 border border-gray-700 rounded-full flex items-center justify-center hover:bg-primary hover:border-primary transition">
                             <i class="ri-instagram-line"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full transition-all">
-                            <i class="ri-pinterest-line"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-primary rounded-full transition-all">
+                        <a href="#" class="w-10 h-10 border border-gray-700 rounded-full flex items-center justify-center hover:bg-primary hover:border-primary transition">
                             <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 border border-gray-700 rounded-full flex items-center justify-center hover:bg-primary hover:border-primary transition">
+                            <i class="ri-pinterest-line"></i>
                         </a>
                     </div>
                 </div>
                 
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Home</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Services</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Portfolio</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Pricing</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Blog</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Portfolio</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition">Pricing</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
                     </ul>
                 </div>
                 
                 <!-- Services -->
                 <div>
-                    <h3 class="text-lg font-bold mb-6">Our Services</h3>
+                    <h3 class="text-lg font-semibold mb-6">Our Services</h3>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">3D Architectural Rendering</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Interior Design</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Floor Plan Design</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Virtual Tours</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Vastu Consultation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Material Specifications</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-all">Custom Design Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">3D Architectural Rendering</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Interior Design Planning</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">3D Floor Plans</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Vastu Consultation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Virtual Walkthroughs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Landscape Design</a></li>
                     </ul>
                 </div>
                 
                 <!-- Newsletter -->
                 <div>
-                    <h3 class="text-lg font-bold mb-6">Subscribe to Our Newsletter</h3>
-                    <p class="text-gray-400 mb-6">Stay updated with our latest projects, design tips, and special offers.</p>
-                    <form class="mb-6">
+                    <h3 class="text-lg font-semibold mb-6">Subscribe to Our Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Stay updated with our latest projects, design tips, and special offers.</p>
+                    <form class="mb-4">
                         <div class="flex">
-                            <input type="email" placeholder="Your email address" class="w-full px-4 py-3 bg-gray-800 border-none rounded-l focus:outline-none focus:ring-1 focus:ring-primary text-gray-200">
-                            <button type="submit" class="bg-primary px-4 py-3 rounded-r hover:bg-opacity-90 transition-all whitespace-nowrap">
-                                Subscribe
+                            <input type="email" class="w-full px-4 py-3 bg-gray-800 border-none rounded-l text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Your email address">
+                            <button type="submit" class="bg-primary px-4 py-3 rounded-r hover:bg-opacity-90 transition whitespace-nowrap">
+                                <div class="w-6 h-6 flex items-center justify-center">
+                                    <i class="ri-send-plane-fill"></i>
+                                </div>
                             </button>
                         </div>
                     </form>
-                    <div class="flex items-center space-x-4">
-                        <div class="w-8 h-8 flex items-center justify-center">
-                            <i class="ri-visa-fill ri-lg"></i>
+                    <div class="flex flex-wrap gap-2">
+                        <div class="flex items-center bg-gray-800 px-3 py-1 rounded">
+                            <i class="ri-visa-fill ri-lg mr-1"></i>
+                            <span class="text-sm">Visa</span>
                         </div>
-                        <div class="w-8 h-8 flex items-center justify-center">
-                            <i class="ri-mastercard-fill ri-lg"></i>
+                        <div class="flex items-center bg-gray-800 px-3 py-1 rounded">
+                            <i class="ri-mastercard-fill ri-lg mr-1"></i>
+                            <span class="text-sm">Mastercard</span>
                         </div>
-                        <div class="w-8 h-8 flex items-center justify-center">
-                            <i class="ri-paypal-fill ri-lg"></i>
-                        </div>
-                        <div class="w-8 h-8 flex items-center justify-center">
-                            <i class="ri-apple-fill ri-lg"></i>
+                        <div class="flex items-center bg-gray-800 px-3 py-1 rounded">
+                            <i class="ri-paypal-fill ri-lg mr-1"></i>
+                            <span class="text-sm">PayPal</span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-12 pt-8">
+            <div class="border-t border-gray-800 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 3D Architect Studio. All rights reserved.</p>
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Professional 3D Architecture & Interior Design. All rights reserved.</p>
                     <div class="flex space-x-6">
-                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-all">Privacy Policy</a>
-                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-all">Terms of Service</a>
-                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-all">Cookie Policy</a>
+                        <a href="#" class="text-gray-400 text-sm hover:text-white transition">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 text-sm hover:text-white transition">Terms of Service</a>
+                        <a href="#" class="text-gray-400 text-sm hover:text-white transition">Cookie Policy</a>
                     </div>
                 </div>
             </div>
@@ -785,54 +1209,46 @@
     </footer>
 
     <script>
-        // Checkbox functionality
-        const checkbox = document.getElementById('privacy-checkbox');
-        checkbox.addEventListener('click', function() {
-            this.classList.toggle('checked');
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
         });
         
-        // Before-After slider functionality
-        const slider = document.querySelector('.absolute.top-0.left-1/2');
-        const beforeImage = document.querySelector('.absolute.top-0.left-0.w-1/2');
-        
-        function moveSlider(e) {
-            let pos = (e.clientX - slider.parentElement.getBoundingClientRect().left) / slider.parentElement.offsetWidth;
-            pos = Math.max(0, Math.min(1, pos));
+        // Before-After Slider
+        const slider = document.querySelector('input[type="range"]');
+        if (slider) {
+            const clipPath = document.querySelector('.clip-path');
             
-            beforeImage.style.width = pos * 100 + '%';
-            slider.style.left = pos * 100 + '%';
+            function updateClipPath(value) {
+                clipPath.style.clipPath = `inset(0 0 0 ${value}%)`;
+            }
+            
+            slider.addEventListener('input', function() {
+                updateClipPath(this.value);
+            });
+            
+            // Initialize
+            updateClipPath(50);
         }
         
-        let isDragging = false;
-        
-        slider.addEventListener('mousedown', () => {
-            isDragging = true;
-        });
-        
-        window.addEventListener('mouseup', () => {
-            isDragging = false;
-        });
-        
-        window.addEventListener('mousemove', (e) => {
-            if (isDragging) {
-                moveSlider(e);
-            }
-        });
-        
-        slider.parentElement.addEventListener('click', (e) => {
-            moveSlider(e);
-        });
-        
-        // Sticky navigation
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-md');
-                nav.classList.remove('bg-opacity-95');
-            } else {
-                nav.classList.remove('shadow-md');
-                nav.classList.add('bg-opacity-95');
-            }
+        // Custom Checkbox
+        const checkboxes = document.querySelectorAll('.custom-checkbox input');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const checkmark = this.nextElementSibling;
+                if (this.checked) {
+                    checkmark.style.backgroundColor = '#0F4C81';
+                    checkmark.style.borderColor = '#0F4C81';
+                } else {
+                    checkmark.style.backgroundColor = '#fff';
+                    checkmark.style.borderColor = '#0F4C81';
+                }
+            });
         });
     </script>
 </body>
